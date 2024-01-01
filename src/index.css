@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+* {
+  box-sizing: inherit;
+  font-family: "Work Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.wrap__container {
+  @apply flex items-center justify-center min-h-screen relative;
+}
+.wrap__container::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-[30%] bg-[url('./assets/images/background-pattern-mobile.svg')] md:bg-[url('./assets/images/background-pattern-desktop.svg')] bg-no-repeat bg-[100%] bg-cover z-0;
+}
+.wrap__container::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-full h-[70%] bg-light-pink z-0;
+}
+main {
+  animation: opacity 1.5s ease-in-out;
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: translateX(-8rem);
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
