@@ -10,9 +10,7 @@ function App() {
   const handleToggle = (index) => {
     setFaqList((prevFaqList) =>
       prevFaqList.map((faq, faqIndex) =>
-        index === faqIndex
-          ? { ...faq, isActive: true }
-          : { ...faq, isActive: false }
+        index === faqIndex ? { ...faq, isActive: !faq.isActive } : faq
       )
     );
   };
